@@ -27,7 +27,7 @@ public class DemoTest {
             path = args[0];
 
         simple();
-        //simple3D();
+        simple3D();
 //        defaultTerminal(path);
         //EPSTerminal(path);
         //SVGTerminal(path);
@@ -89,8 +89,9 @@ public class DemoTest {
     /* This is a very simple plot to demonstrate JavaPlot graphs */
     private static void simple() {
         JavaPlot p = new JavaPlot();
-        p.addPlot("sin(x)");
-        p.plot();
+        p.setTitle("Graphic Title"); // add Graphic Title
+        p.addPlot("sin(x)"); // addPlot(java.lang.String function);
+        p.plot(); // force to plot.
     }
 
     /* This is a very simple plot to demonstrate JavaPlot 3d graphs */
