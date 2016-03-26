@@ -32,10 +32,6 @@ public class WebPage {
     public void loadDocumentFromWeb() {
         try {
             document = Jsoup.connect(anchor.getAnchorURL()).get();
-//            org.jsoup.select.Elements newsHeadLines = document.select("a");
-//            for (Element e : newsHeadLines) {
-//                System.out.println(e.attr("abs:href"));
-//            }
         } catch (IOException e)  {
             Logger.getLogger(WebPage.class.getName()).log(Level.SEVERE, null, e);
         }
