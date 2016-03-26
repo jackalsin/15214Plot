@@ -5,6 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+
+import java.util.List;
 
 /**
  * Created by jacka on 3/26/2016.
@@ -12,6 +15,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class WikiTest {
 
     private static final String URL = "https://www.linkedin.com/";
+
+    private static final String keywordToSearch = "Micheal Sean";
 
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
@@ -38,11 +43,15 @@ public class WikiTest {
 
         WebElement searchBox = driver.findElement(By.id("main-search-box"));
 
-        searchBox.sendKeys("micheal sean");
+        searchBox.sendKeys(keywordToSearch);
 
         driver.findElement(By.cssSelector("button.search-button")).click();
 
-        
+        List<WebElement> allPeople = driver.findElements(By.cssSelector(".title.main-headline"));
+        /* use find elements here */
+
+        allPeople.get(0).click();
+
 
         Thread.sleep(5000);
 
